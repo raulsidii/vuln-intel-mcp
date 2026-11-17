@@ -1,0 +1,54 @@
+{
+  "name": "vuln-intel-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that gives AI assistants live vulnerability intelligence (NVD, FIRST EPSS, CISA KEV) and risk-based CVE prioritization.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "vuln-intel-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.test.json",
+    "smoke": "tsx scripts/smoke.ts"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "cve",
+    "nvd",
+    "epss",
+    "cisa-kev",
+    "vulnerability-management",
+    "security",
+    "claude"
+  ],
+  "author": "Raül Silvero (https://github.com/raulsidii)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raulsidii/vuln-intel-mcp.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.1.0"
+  }
+}
